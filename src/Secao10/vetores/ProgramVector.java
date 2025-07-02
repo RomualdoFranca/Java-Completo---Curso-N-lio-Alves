@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class ProgramVector {
 
 	public static void main(String[] args) {
+
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Digite o número de inputs");
 		int inputs = sc.nextInt();
@@ -20,7 +21,7 @@ public class ProgramVector {
 			System.out.println("Digite os valores:");
 			double average = sc.nextDouble();
 			meuVector[i] = average;
-			somaAverage += meuVector[i];
+			somaAverage += meuVector[i]; // adiciona cada um dos inputs a variavel somaAverage
 		}
 		for (double d : meuVector) {
 			System.out.println(d);
