@@ -30,7 +30,7 @@ public class Program {
 			
 			if (numeros[i] < 0) {
 //				System.out.println("Números negativos:");
-				System.out.println("Números negativos:" +  numeros[i]);
+				System.out.println(numeros[i]);
 			}
 			
 		}
