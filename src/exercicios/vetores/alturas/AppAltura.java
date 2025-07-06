@@ -43,6 +43,7 @@ public class AppAltura {
 		double avg = soma / n;
 		System.out.printf("Altura média: %.2f\n", avg);
 		
+		System.out.printf("Pessoas com menos de 16 anos ");
 		for (int i = 0; i < p.length; i++) {
 			
 			int count = 0;
