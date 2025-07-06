@@ -43,7 +43,7 @@ public class AppAltura {
 		double avg = soma / n;
 		System.out.printf("Altura média: %.2f\n", avg);
 		
-		System.out.printf("Pessoas com menos de 16 anos ");
+		System.out.printf("Pessoas com menos de 16 anos: ");
 		for (int i = 0; i < p.length; i++) {
 			
 			int count = 0;
@@ -52,11 +52,10 @@ public class AppAltura {
 			if(p[i].getIdade() < 16) {
 				count++;
 				porcentagem = (100 * count) / n;
-				System.out.printf("%.1f%% \n", porcentagem);
+				System.out.printf("%.1f%% \n%s\n", porcentagem, p[i].getNome());
 				
-			}else {
-				System.out.println("Dentro do else " + porcentagem + "%%");
 			}
+
 		}
 		
 		// Só é possível realizar o output dos dados do objeto sobrescrevendo o método toString()
