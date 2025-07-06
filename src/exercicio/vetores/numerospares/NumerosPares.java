@@ -71,12 +71,12 @@ public class NumerosPares {
 		
 		for (int i = 0; i < numerosPares.length; i++) {
 			
-			int indiceNumerosPares = 0;
+			int indiceNumerosPares = 0;// Novo índice para controlar a posição em numerosPares[]
 			for(int j = 0; j < numeros.length; j++) {
 				if(numeros[j] % 2 == 0) {
 					
 					numerosPares[indiceNumerosPares] = numeros[j]; 
-					indiceNumerosPares++;
+					indiceNumerosPares++;// Incrementa o índice apenas quando um número par é adicionado
 				}
 				
 			}
