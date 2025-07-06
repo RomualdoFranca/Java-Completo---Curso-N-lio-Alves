@@ -29,11 +29,13 @@ public class NumerosPares {
 		// Depois que a array estiver alimentada os com numeros, criar uma outra array apenas com os numeros pares.
 		// Armazenar a quantidade de numeros encontrados numa variavel que vai ser 
 		
-		// Percorrer a 1° array em busca de  numeros pares
+		// Percorrer a array numeros[] em busca de  numeros pares
 
+		int quantidadeNumerosPares = 0;
 		for (int i = 0; i < numeros.length; i++) {
 			if (numeros[i] % 2 == 0) {
-				System.out.println("Numero par " + numeros[i]);
+				quantidadeNumerosPares += 1;
+				System.out.println("Numero par " + numeros[i] + "\nQuantidade: " + quantidadeNumerosPares);
 			}else {
 				System.out.println("Numero impar " + numeros[i]);
 			}
