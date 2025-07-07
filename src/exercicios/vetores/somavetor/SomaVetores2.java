@@ -23,8 +23,6 @@ public class SomaVetores2 {
 			vetorA[i] = sc.nextInt();
 		}
 		
-		
-		
 		int[] vetorB = new int[quantidadeVetores];
 		
 		System.out.printf("Digite os %d valores do vetor B\n", quantidadeVetores);
@@ -47,6 +45,20 @@ public class SomaVetores2 {
 			System.out.print(i + " ");
 		}
 		System.out.println();
+		
+		
+		int[] somaValoresVetores = new int[quantidadeVetores];
+		
+		// pegar os valores com o mesmo indice de cada vetor, somá-los e adicionar no novo vetor
+		for (int i = 0; i < somaValoresVetores.length; i++) {
+			somaValoresVetores[i] = vetorA[i] + vetorB[i];
+		}
+		
+		//itera sobre o vetor de soma
+		System.out.println("Vetor com os valores somados");
+		for (int i : somaValoresVetores) {
+			System.out.print(i + " ");
+		}
 		
 		
 		sc.close();
