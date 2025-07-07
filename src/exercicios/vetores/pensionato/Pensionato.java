@@ -12,13 +12,6 @@ public class Pensionato {
 		// vetor que representa o total de quartos
 		String[] quartos = new String[10];
 		
-//		int numeroQuarto = 1;
-//		for (int i = 0; i < quartos.length; i++) {
-//			quartos[i] = numeroQuarto;
-//			numeroQuarto++;
-//		}
-//		System.out.println(quartos.length);
-		
 		System.out.println("Quantos quartos serão alugados? " );// define o tamanho do vetor dos dados dos clientes
 		int quartosAlugados = sc.nextInt();
 		sc.nextLine();
@@ -41,14 +34,12 @@ public class Pensionato {
 			sc.nextLine();
 			
 			dadosClientes[i] = numeroQuarto + ": " + nome + ", " + email;
-
+			// adiciona os clientes aos respectivos quartos
 			for(int j = 0; j < quartos.length; j++) {
 				quartos[numeroQuarto] = dadosClientes[i];
 			}
 			
 		}
-		
-		
 		
 		System.out.println("Dados dos clientes:");
 		for (String string : quartos) {
