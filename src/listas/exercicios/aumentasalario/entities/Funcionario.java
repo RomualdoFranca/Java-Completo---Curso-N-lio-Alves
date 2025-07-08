@@ -27,6 +27,7 @@ public class Funcionario {
 		return salario;
 	}
 	
+
 	@Override
 	public String toString() {
 		
@@ -34,6 +35,9 @@ public class Funcionario {
 				%d, %s, %.2f
 				""".formatted(id, nome, salario);
 	}
+
+
+
 	
 
 }
