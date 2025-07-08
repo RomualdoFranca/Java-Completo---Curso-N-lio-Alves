@@ -12,10 +12,33 @@ public class AppPensao {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		Aluguel aluguel01 = new Aluguel("Maria", "maria@gmail.com");
+		Aluguel[] vect = new Aluguel[10]; // vetor de objetos
 		
-		System.out.println(aluguel01);
+//		Aluguel aluguel01 = new Aluguel("Maria", "maria@gmail.com");
 		
+		System.out.println("Quantos quartos serão alugados?");
+		int quantidadeQuartos = sc.nextInt();
+		sc.nextLine();
+		
+		for (int i = 0; i < vect.length; i++) {
+			System.out.println("Nome:");
+			String nome = sc.nextLine();
+			
+			System.out.println("Email: ");
+			String email = sc.next();
+			
+			System.out.println("Numero do quarto:");
+			int numeroQuarto = sc.nextInt();
+			sc.nextLine();
+			
+			//adiciona os objetos no vetor
+			vect[numeroQuarto] = new Aluguel(nome, email);
+			System.out.println();
+		}
+		
+		for (int i = 0; i < vect.length; i++) {
+			System.out.println(vect[i]);
+		}
 		sc.close();
 	}
 
