@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
+import java.util.stream.Collector;
 
 import listas.exercicios.aumentasalario.entities.Funcionario;
 
@@ -36,8 +37,27 @@ public class Program {
 			list.add(new Funcionario(id, nome, salario));
 		}
 		
+		
+		
+		
+		System.out.println("Lista de Empregrados:");
 		for (Funcionario funcionario : list) {
 			System.out.println(funcionario);
+		}
+		
+		System.out.println("Informe o ID do funcionario que vai receber aumento");
+		int id = sc.nextInt();
+		sc.nextLine();
+		
+//		List<Funcionario> result = list.stream().filter(x -> x.getId() == id).collect(Collectors.List);
+		Funcionario result = list.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
+		
+//		System.out.println(result);
+
+		if(result != null) {
+			System.out.println("ID válido");
+		}else {
+			System.out.println("ID inválido");
 		}
 		
 		sc.close();

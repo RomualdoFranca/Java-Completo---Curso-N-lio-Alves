@@ -31,7 +31,6 @@ public class Funcionario {
 	public String toString() {
 		
 		return """
-				Lista de Empregrados:
 				%d, %s, %.2f
 				""".formatted(id, nome, salario);
 	}
