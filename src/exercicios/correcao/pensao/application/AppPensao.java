@@ -20,7 +20,7 @@ public class AppPensao {
 		int quantidadeQuartos = sc.nextInt();
 		sc.nextLine();
 		
-		for (int i = 0; i < vect.length; i++) {
+		for (int i = 0; i < quantidadeQuartos; i++) {
 			System.out.println("Nome:");
 			String nome = sc.nextLine();
 			
@@ -37,7 +37,10 @@ public class AppPensao {
 		}
 		
 		for (int i = 0; i < vect.length; i++) {
-			System.out.println(vect[i]);
+			if(vect[i] != null) {
+				System.out.println(i + ":" + vect[i]);
+				
+			}
 		}
 		sc.close();
 	}
