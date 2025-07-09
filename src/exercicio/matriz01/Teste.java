@@ -8,6 +8,21 @@ public class Teste {
 	public static void main(String[] args) {
 
 		Scanner sc = new Scanner(System.in);
+		
+		//testa a geraçao de numeros aleatorios
+		int num = 1;
+		int[] list = new int[10];
+		
+		for (int i = 0; i < list.length; i++) {
+			list[i] = num;
+			num++;
+		}
+
+		for (int i : list) {
+			System.out.print(i + " ");
+		}
+		System.out.println();
+		
 
 		System.out.println("Digite o numero de linhas da matriz");
 		int linha  = sc.nextInt();
@@ -18,6 +33,9 @@ public class Teste {
 		sc.nextLine();
 		
 		int[][] mat = new int[linha][coluna];
+		
+		//preenche a matriz com valores
+		
 		
 		//imprime os valores da matriz
 		for (int i = 0; i < mat.length; i++) {
