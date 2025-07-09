@@ -20,7 +20,9 @@ public class Teste {
 //		System.out.println("Simulando resultado do jogo do Bicho");
 //		metodoTeste(mat);
 //		imprimeValores(mat);
-		
+		int num = 0;
+		num = verificaNumerosVizinhos();
+		System.out.println(num);
 		
 		System.out.println("Matriz de numeros sequenciais");
 		preencheMatrizNumerosSequenciais(mat);
@@ -78,7 +80,7 @@ public class Teste {
 		int max = 9;
 		
 		for (int i = 0; i < matriz.length; i++) {
-			for (int j = 0; j < matriz.length; j++) {
+			for (int j = 0; j < matriz[i].length; j++) {
 				int numeroAleatorio = (int) (Math.random() * (max - min + 1) + min);
 				
 				if (j == 0 && numeroAleatorio == 0) {
@@ -90,6 +92,16 @@ public class Teste {
 				}
 			}
 		}
+	}
+	
+	
+	//selecionar numero da matriz
+	public static int verificaNumerosVizinhos() {
+		Scanner sc = new Scanner(System.in);
+		int num = 0;
+		System.out.println("Escolha um dos numero da matriz:");
+		num = sc.nextInt();
+		return num;
 	}
  	
 	public static void imprimeValores(int[][] matriz) {
