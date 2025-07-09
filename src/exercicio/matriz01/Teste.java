@@ -34,28 +34,43 @@ public class Teste {
 		
 		int[][] mat = new int[linha][coluna];
 		
-		//preenche a matriz com inteiros de 1 a 9
-		int num = 1;
-		for (int i = 0; i < mat.length; i++) {
-			for (int j = 0; j < mat[i].length; j++) {
-				mat[i][j] = num;
-				num++;
-			}
-		}
-		
+		System.out.println("Matriz de numeros sequenciais");
+		preencheMatrizNumerosSequenciais(mat);
 		imprimeValores(mat);
 		
-		//imprime os valores da matriz
-//		for (int i = 0; i < mat.length; i++) {
-//			for (int j = 0; j < mat[i].length; j++) {
-//				System.out.print(mat[i][j] + " ");
-//			}
-//			System.out.println();
-//		}
-		
+		System.out.println("Matriz de numeros aleatorios");
+		preencheMatrizNumerosAleatorios(mat);
+		imprimeValores(mat);
 		
 		sc.close();
 	}
+	
+	public static void preencheMatrizNumerosSequenciais(int[][] matriz) {
+		
+		//preenche a matriz com inteiros de 1 a 9
+		int num = 1;
+		for (int i = 0; i < matriz.length; i++) {
+			for (int j = 0; j < matriz[i].length; j++) {
+				matriz[i][j] = num;
+				num++;
+			}
+		}
+	}
+	public static void preencheMatrizNumerosAleatorios(int[][] matriz) {
+		
+		int min = 1;
+		int max = 9;
+		
+		for (int i = 0; i < matriz.length; i++) {
+			for (int j = 0; j < matriz[i].length; j++) {
+				matriz[i][j] = (int) (Math.random() * (max - min + 1)) + min;
+				
+			}
+		}
+	}
+	
+	
+	
 	
 	public static void imprimeValores(int[][] matriz) {
 		for (int i = 0; i < matriz.length; i++) {
