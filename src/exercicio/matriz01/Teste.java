@@ -10,18 +10,18 @@ public class Teste {
 		Scanner sc = new Scanner(System.in);
 		
 		//testa a geraçao de numeros aleatorios
-		int num = 1;
-		int[] list = new int[10];
-		
-		for (int i = 0; i < list.length; i++) {
-			list[i] = num;
-			num++;
-		}
-
-		for (int i : list) {
-			System.out.print(i + " ");
-		}
-		System.out.println();
+//		int num = 1;
+//		int[] list = new int[10];
+//		
+//		for (int i = 0; i < list.length; i++) {
+//			list[i] = num;
+//			num++;
+//		}
+//
+//		for (int i : list) {
+//			System.out.print(i + " ");
+//		}
+//		System.out.println();
 		
 
 		System.out.println("Digite o numero de linhas da matriz");
@@ -34,19 +34,36 @@ public class Teste {
 		
 		int[][] mat = new int[linha][coluna];
 		
-		//preenche a matriz com valores
-		
-		
-		//imprime os valores da matriz
+		//preenche a matriz com inteiros de 1 a 9
+		int num = 1;
 		for (int i = 0; i < mat.length; i++) {
 			for (int j = 0; j < mat[i].length; j++) {
-				System.out.print(mat[i][j] + " ");
+				mat[i][j] = num;
+				num++;
 			}
-			System.out.println();
 		}
+		
+		imprimeValores(mat);
+		
+		//imprime os valores da matriz
+//		for (int i = 0; i < mat.length; i++) {
+//			for (int j = 0; j < mat[i].length; j++) {
+//				System.out.print(mat[i][j] + " ");
+//			}
+//			System.out.println();
+//		}
 		
 		
 		sc.close();
+	}
+	
+	public static void imprimeValores(int[][] matriz) {
+		for (int i = 0; i < matriz.length; i++) {
+			for (int j = 0; j < matriz[i].length; j++) {
+				System.out.print(matriz[i][j] + " ");
+			}
+			System.out.println();
+		}
 	}
 
 }
