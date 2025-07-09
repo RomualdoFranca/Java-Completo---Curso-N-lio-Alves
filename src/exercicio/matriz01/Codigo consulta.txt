@@ -1,0 +1,96 @@
+	public static void main(String[] args) {
+
+		
+		// FUTURA IMPLEMENTAÇÃO:
+		//Jogo estilo batalha naval
+		
+		//Criar uma matriz 10x10
+		//Preencher com numeros sequenciais de 1 a 100
+		
+		//Cada um do numeros será uma posiçao do tabuleiro
+		//gerar um numero aleatório entre os 100 numeros da matriz
+		// o numero gerado será o local no navio inimigo
+		
+		//o jogador terá x jogadas para atingir o alvo
+		
+		// a jogada será com dois inputs:
+		// um com o valor da linha
+		// e outro com o valor da coluna
+		
+		// a cada tentativa, vai receber uma mensagem informando qual o local do tiro em referência ao navio inimigo
+		// se o tiro for na mesma linha da localização do navio:
+		// mensagem deve informar se o tiro acertou a esquerda ou direita do alvo
+		// se o tiro atingir a mesma coluna: 
+		// mensagem deve informar se o alvo está a frente ou atrás do local atingindo
+		
+		
+		
+		Scanner sc = new Scanner(System.in);
+		//definindo o tamanho da matriz
+		System.out.println("Digite o tamanho da matriz");
+		int n = sc.nextInt();
+		sc.nextLine();
+		//criando uma matriz de numeros inteiros
+		int[][] mat = new int[n][n]; // int [linha][coluna]
+		
+		//lendo uma matriz
+		//o 1° for percorre as linhas
+		for (int i = 0; i < n; i++) {
+			//percorre as colunas
+			for (int j = 0; j < n; j++) {
+				//nesse ponto, a posição da linha e da coluna ja foram definidas
+				//na primeira entrada, tanto o 'i' quanto o 'j' valem 0.
+				// o 'sc.nextInt()' serve para inserir o valor inteiro nessa posição.
+				// a cada passo do laço, a posição da matriz muda possibilitando a inserção do valor na posição
+				// o laço interno roda até o valor de 'j < n ' for true. Quando a condição for false, volta para o laço
+				//externo
+				
+//				System.out.println("Digite o valor");
+//				int valor = sc.nextInt();
+				mat[i][j] = sc.nextInt(); //os numeros podem ser inseridos um após o outro dando espaço entre eles
+//				System.out.printf("O %d foi inserido na linha %d e coluna %d\n",valor, i, j);
+				
+			}
+		
+		}
+		System.out.println("Imprime a Matriz completa");
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+				System.out.print(mat[i][j]+ " ");
+			}
+			System.out.println();//quebra de linha a cada linha impresa pelo laço interno
+		}
+		System.out.println("\n--------------------");
+		
+		// os valores da diagonal principal tem como posições valores com indices iguais
+		System.out.println("Diagonal principal");
+		for (int i = 0; i < n; i++) {
+			System.out.print(mat[i][i] + " ");
+		}
+		System.out.println("\n--------------------");
+		System.out.println("Diagonal secundaria");
+		// int [linha][coluna]
+		int decremento = n -1;//indice da ultima linha
+		for (int i = 0; i < n; i++) {
+			System.out.print(mat[decremento][i] + " "); //mat[decremento] inicia com o valor da ultima linha da matriz
+			decremento--;//percorre inersamente os indices da matriz
+		}
+		
+		// quantidades de numeros negativos
+		int contadorNumerosNegativos = 0;
+		// decobrir a quantidade de colunas da matriz: 
+		//no laço interno: for(int j = 0; j < mat[i].length; j++)
+		for (int i = 0; i < mat.length; i++) {//usando a propriedade .length
+			for (int j = 0; j < mat[i].length; j++) {
+				//filtrar os numeros negativos
+				if (mat[i][j] < 0) {
+					contadorNumerosNegativos++;
+				}
+			}
+		}
+
+		System.out.println("\nQuantidades de numeros negativos: " + contadorNumerosNegativos);
+		
+		//propriedade length
+		sc.close();
+	}
