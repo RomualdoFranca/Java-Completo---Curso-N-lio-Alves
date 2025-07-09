@@ -49,11 +49,6 @@ public class Program {
 		// filtra na lista o funcionario que tem o ID inserido pelo usuário
 		Funcionario result = list.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
 
-		System.out.println("Lista depois da remoção");
-		System.out.println("Lista de Empregrados:");
-		for (Funcionario funcionario : list) {
-			System.out.println(funcionario);
-		}
 
 		if (result != null) {
 
@@ -62,6 +57,12 @@ public class Program {
 			// remove o funcionario pesquisado
 			list.remove(indicePesquisado);
 
+			System.out.println("Lista depois da remoção");
+			System.out.println("Lista de Empregrados:");
+			for (Funcionario funcionario : list) {
+				System.out.println(funcionario);
+			}
+			
 			System.out.println("Digite a porcentagem do aumento no salário:");
 			double porcentagemAumento = sc.nextDouble();
 
