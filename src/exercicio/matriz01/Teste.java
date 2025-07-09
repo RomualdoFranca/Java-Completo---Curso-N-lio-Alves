@@ -7,33 +7,30 @@ public class Teste {
 
 	public static void main(String[] args) {
 
-
-//		System.out.println();
-		
-//		System.out.println("Digite o numero de linhas da matriz");
-//		int linha  = sc.nextInt();
-//		sc.nextLine();
-//		
-//		System.out.println("Digite o numero de colunas da matriz");
-//		int coluna = sc.nextInt();
-//		sc.nextLine();
-		
+		//variaveis para armezar os valores inseridos no metodo de definicao do tamanho da matriz
 		int linha = 0;
 		int coluna = 0;
 		int[] resultado = defineLinhaColuna(linha, coluna);
 		//verifica se os valores foram armazenados nas variaveis
 //		System.out.println("linha " + resultado[0] + "\ncoluna " + resultado[1]);
 //		
+		//cria a matriz com os valores definidos no metodo
 		int[][] mat = new int[resultado[0]][resultado[1]];
+		
+//		System.out.println("Simulando resultado do jogo do Bicho");
+//		metodoTeste(mat);
+//		imprimeValores(mat);
 		
 		
 		System.out.println("Matriz de numeros sequenciais");
 		preencheMatrizNumerosSequenciais(mat);
 		imprimeValores(mat);
-		
+//		
 		System.out.println("Matriz de numeros aleatorios");
 		preencheMatrizNumerosAleatorios(mat);
 		imprimeValores(mat);
+		
+		
 		
 	}
 	
@@ -64,7 +61,7 @@ public class Teste {
 	}
 	public static void preencheMatrizNumerosAleatorios(int[][] matriz) {
 		
-		int min = 1;
+		int min = 0;
 		int max = 9;
 		
 		for (int i = 0; i < matriz.length; i++) {
@@ -75,9 +72,26 @@ public class Teste {
 		}
 	}
 	
-	
-	
-	
+	//gerar vetor com 4 algarismo que não inicie com zero
+	public static void metodoTeste(int[][] matriz) {
+		int min = 0;
+		int max = 9;
+		
+		for (int i = 0; i < matriz.length; i++) {
+			for (int j = 0; j < matriz.length; j++) {
+				int numeroAleatorio = (int) (Math.random() * (max - min + 1) + min);
+				
+				if (j == 0 && numeroAleatorio == 0) {
+					numeroAleatorio = (int) (Math.random() * (max - min + 1) + min);
+					matriz[i][j] = numeroAleatorio;
+				}else {
+					matriz[i][j] = numeroAleatorio;
+					
+				}
+			}
+		}
+	}
+ 	
 	public static void imprimeValores(int[][] matriz) {
 		for (int i = 0; i < matriz.length; i++) {
 			for (int j = 0; j < matriz[i].length; j++) {
