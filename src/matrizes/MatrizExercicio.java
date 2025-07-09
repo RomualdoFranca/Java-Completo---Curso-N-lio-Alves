@@ -64,7 +64,7 @@ public class MatrizExercicio {
 			for (int j = 0; j < n; j++) {
 				System.out.print(mat[i][j]+ " ");
 			}
-			System.out.println();
+			System.out.println();//quebra de linha a cada linha impresa pelo laço interno
 		}
 		System.out.println("\n--------------------");
 		
@@ -82,6 +82,22 @@ public class MatrizExercicio {
 			decremento--;//percorre inersamente os indices da matriz
 		}
 		
+		// quantidades de numeros negativos
+		int contadorNumerosNegativos = 0;
+		// decobrir a quantidade de colunas da matriz: 
+		//no laço interno: for(int j = 0; j < mat[i].length; j++)
+		for (int i = 0; i < mat.length; i++) {//usando a propriedade .length
+			for (int j = 0; j < mat[i].length; j++) {
+				//filtrar os numeros negativos
+				if (mat[i][j] < 0) {
+					contadorNumerosNegativos++;
+				}
+			}
+		}
+
+		System.out.println("\nQuantidades de numeros negativos: " + contadorNumerosNegativos);
+		
+		//propriedade length
 		sc.close();
 	}
 
