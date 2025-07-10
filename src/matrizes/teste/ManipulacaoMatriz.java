@@ -15,8 +15,13 @@ public class ManipulacaoMatriz {
 		int[][] matriz = new int[vectLinhaColuna[0]][vectLinhaColuna[1]];
 		preencheMatrizNumerosAleatorios(matriz);
 		imprimeMatriz(matriz);
+
 		imprimeDiagonalPrincipal(matriz);
 		imprimeDiagonalSecundaria(matriz);
+		
+//		imprimeMatriz(matriz);
+		int numeroPesquisa = 0;
+		pesquisaNumeroMatriz(matriz, numeroPesquisa);
 	}
 	//fim do metodo main
 	
@@ -57,7 +62,7 @@ public class ManipulacaoMatriz {
 	}
 	
 	public static void imprimeDiagonalPrincipal(int[][] nomeMatriz) {
-		
+		System.out.println("Diagonal principal");
 		for (int i = 0; i < nomeMatriz.length; i++) {
 			for (int j = 0; j < nomeMatriz[i].length; j++) {
 				if (i == j) {
@@ -71,22 +76,46 @@ public class ManipulacaoMatriz {
 	}
 	
 	public static void imprimeDiagonalSecundaria(int[][] nomeMatriz) {
-		
+		System.out.println("Diagonal Secundária");
 		int indiceLinha = nomeMatriz.length - 1;
 		for (int i = 0; i < nomeMatriz.length; i++) {
 			for (int j = 0; j < nomeMatriz[i].length; j++) {
 				if (indiceLinha >= 0) {
-//					System.out.println(indiceLinha);
-					nomeMatriz[indiceLinha][j] = 0;
-//					System.out.print(nomeMatriz[indiceLinha][j] + " ");
+					// zera os valores da diagonal
+//					nomeMatriz[indiceLinha][j] = 0; 
+					System.out.print(nomeMatriz[indiceLinha][j] + " ");
 					
 				}
 				indiceLinha--;
 				
 			}
-			imprimeMatriz(nomeMatriz);
 		}
 		System.out.println("\n-----------------------");
+	}
+	
+	public static void pesquisaNumeroMatriz(int[][] matriz, int num) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Digite o numero para ser pesquisado");
+		num = sc.nextInt();
+		sc.nextLine();
+		
+		if (matriz.equals(num) == true) {
+			System.out.println("O numero inserido está contido na matriz");
+		}else {
+			System.out.println("O numero inserido não se encontra na matriz");
+		}
+		
+		
+		
+		
+		
+		sc.close();
+	}
+	
+	public static void informaPosicaoSemNumero(int[][] matriz) {
+		
 	}
 	
 }
